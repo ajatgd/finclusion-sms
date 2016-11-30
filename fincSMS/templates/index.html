@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RISE</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<style type="text/css">
+		body{
+			margin: 0;
+		}
+		ul {
+		    list-style-type: none;
+		    margin: 0;
+		    padding: 0;
+		    overflow: hidden;
+		    background-color: #333;
+		}
+		#logo{
+			float: left;
+			margin-left: 80px;
+		}
+		#reg{
+			margin-right: 150px;
+		    float: right;
+		}
+
+		li a {
+			text-decoration: none;
+		    display: block;
+		    color: white;
+		    text-align: center;
+		    padding: 14px 16px;
+		    text-decoration: none;
+		}
+
+		/* Change the link color to #111 (black) on hover */
+		li a:hover {
+		    background-color: #111;
+		}
+		nav,ul{
+			height: 80px;
+		}
+		header{
+			height: 400px;
+			background: url('../static/abc.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			margin-bottom: 50px;
+			text-align: center;
+			padding-top: 130px;
+		}
+		footer{
+			background: #222;
+			height: 150px;
+			margin-top: 80px;
+		}
+		footer li{
+			color: white;
+		}
+		.register{
+			background-color: #f44336; /* Red */
+		    border: none;
+		    color: white;
+		    padding: 15px 40px;
+		    text-align: center;
+		    text-decoration: none;
+		    display: inline-block;
+		    font-size: 28px;
+		    margin: 4px 2px;
+		    cursor: pointer;
+		    -webkit-transition-duration: 0.4s; /* Safari */
+		    transition-duration: 0.4s;
+		    box-shadow: 0 8px 16px 0 rgba(255,255,255,0.2), 0 6px 20px 0 rgba(255,255,255,0.19);
+		    border-radius: 4px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-default" style="margin:0;border:0px;">
+		<ul>
+			<li id="logo"><a href="/"><h1>Rise</h1></a></li>
+			<li id="reg"><a href="/#about"><h3>About</h3></a></li>
+		</ul>
+	</nav>
+	<header>
+		<a type="button" href="/register/" class="register">Register</a>
+	</header>
+	<div class="container" id="about">
+		<div class="col-sm-10 col-sm-offset-1">
+			<h1>Lorem Ipsum</h1>
+			<p>Scale the background image to be as large as possible so that the background area is completely covered by the background image. Some parts of the background image may not be in view within the background positioning area.Scale the background image to be as large as possible so that the background area is completely covered by the background image. Some parts of the background image may not be in view within the background positioning area.Scale the background image to be as large as possible so that the background area is completely covered by the background image. Some parts of the background image may not be in view within the background positioning area.</p>
+		</div>
+	</div>
+	<footer >
+		<div class="container">
+			<ul style="height: 150px;">
+				<li><a href="">About</a></li>
+				<li><a href="">Register</a></li>
+				<li><a href="">Contact Us</a></li>
+			</ul>
+		</div>
+	</footer>
+</body>
+</html>

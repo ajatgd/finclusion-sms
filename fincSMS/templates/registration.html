@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Page</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<style type="text/css">
+		body{
+			margin: 0;
+		}
+		ul {
+		    list-style-type: none;
+		    margin: 0;
+		    padding: 0;
+		    overflow: hidden;
+		    background-color: #333;
+		}
+		#logo{
+			float: left;
+			margin-left: 80px;
+		}
+		#reg{
+			margin-right: 150px;
+		    float: right;
+		}
+
+		li a {
+		    display: block;
+		    color: white;
+		    text-align: center;
+		    padding: 14px 16px;
+		    text-decoration: none;
+		}
+
+		/* Change the link color to #111 (black) on hover */
+		li a:hover {
+		    background-color: #111;
+		}
+		nav,ul{
+			height: 80px;
+		}
+		header{
+			height: 400px;
+			background: url('../static/abc.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			margin-bottom: 50px;
+		}
+		footer{
+			background: #222;
+			height: 150px;
+			margin-top: 80px;
+		}
+		footer li{
+			color: white;
+		}
+		form{
+			margin-top: 30px;
+		}
+		input[type=text], select, input[type=number], input[type=email] {
+		    padding: 12px 20px;
+		    margin: 8px 0;
+		    display: inline-block;
+		    border: 1px solid #ccc;
+		    border-radius: 4px;
+		    box-sizing: border-box;
+		}
+		input[type=text]{
+			width: 80%;
+		}
+		select{
+			width: 30%;
+		}
+		input[type=checkbox]{
+			height: 15px;
+			width: 15px;
+			padding: 12px 20px;
+		    margin: 8px 0;
+		    display: inline-block;
+		    border: 1px solid #ccc;
+		    border-radius: 4px;
+		    box-sizing: border-box;
+		}
+		input[type=submit] {
+			width: 20%;
+		    background-color: #4CAF50;
+		    color: white;
+		    padding: 14px 10px;
+		    margin: 8px 0;
+		    border: none;
+		    border-radius: 4px;
+		    cursor: pointer;
+		    font-size: 22px;
+		}
+
+		input[type=submit]:hover {
+		    background-color: #45a049;
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-default" style="margin:0;border:0px;">
+		<ul>
+			<li id="logo"><a href="/"><h1>Rise</h1></a></li>
+			<li id="reg"><a href="/#about"><h3>About</h3></a></li>
+		</ul>
+	</nav>
+	<div id="mid">
+		<div class="container" style="margin-top: 50px;">
+			<h1>Enter your details</h1>
+			<form method="post" action="/registration/" id="form">
+			
+				{% csrf_token %}
+				{{ form.as_p }}
+				<input type="submit">
+			</form>
+		</div>
+	</div>
+	<footer>
+		<div class="container">
+			<ul style="height: 150px;">
+				<li><a href="">About</a></li>
+				<li><a href="">Register</a></li>
+				<li><a href="">Contact Us</a></li>
+			</ul>
+		</div>
+	</footer>
+	<script>
+	$(function(){
+			$( "#id_atal_pension_yojana" ).prop( "disabled", true );
+			$("#id_age").change(function(){
+				var age=$("#id_age").val();
+				if(age>=18 && age <= 40){
+					$( "#id_atal_pension_yojana" ).prop( "disabled", false );
+				}
+				else{
+					$( "#id_atal_pension_yojana" ).prop('checked', false)
+					$( "#id_atal_pension_yojana" ).prop( "disabled", true );
+				}
+			});
+			$("#id_salary").prop("disabled",true);
+			$("#id_employed").change(function(){
+				console.log($("#id_employed").prop('checked'));
+				if($("#id_employed").prop('checked')==true)
+					$("#id_salary").prop("disabled",false);
+				else {
+					$("#id_salary").prop('value','');
+					$("#id_salary").prop("disabled",true);
+				}
+			});
+			// if($('input').is(':checkbox')
+			// 	$('input').addClass('form-control')
+
+	});
+	</script>
+	
+</body>
+</html>
